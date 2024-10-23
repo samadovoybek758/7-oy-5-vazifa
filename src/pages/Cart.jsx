@@ -43,6 +43,7 @@ function Cart() {
               />
               <div>
                 <h2 className="text-gray-600 text-2xl font-bold mb-5 uppercase">{value.data.attributes.title}</h2>
+                <p className="mb-3">{value.data.attributes.company}</p>
                 <span
                   style={{
                     backgroundColor: value.color,
@@ -51,7 +52,8 @@ function Cart() {
                 ></span>
               </div>
               <div className="flex flex-col gap-3">
-                <select className="w-20 p-2 bg-blue-500 text-white rounded-md border" value={value.count} onChange={(e) =>(changeCount(e.target.value,value.id ,value.color))}>
+                <h4>Amount</h4>
+                <select className="w-20 p-2 bg-blue-500 text-white rounded-md border" value={value.count} onChange={(e) =>(changeCount(e.target.value,value.color ,value.id))}>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
