@@ -15,9 +15,12 @@ function Login() {
       password : passwordRef.current.value
     }
     
-    http.post('auth/local')
+    http.post('auth/local', data)
     .then(data =>{
       console.log(data);
+
+      localStorage.setItem('token', data.data.jwt)
+      navigate('/')
     })
     .catch(err =>{
       console.log(err);

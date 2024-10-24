@@ -86,6 +86,8 @@ function App() {
           ></Route>
 
           <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/Register" element={<Register></Register>}></Route>
+
 
           <Route
             path="/about"
@@ -95,8 +97,7 @@ function App() {
               </Header>
             }
           ></Route>
-          <Route path="/register" element={<Register></Register>}></Route>
-
+          
           <Route
             path="/cart"
             element={
@@ -106,6 +107,8 @@ function App() {
             }
           ></Route>
          
+
+
 {/* Provite pages */}
           <Route
             path="/orders"
