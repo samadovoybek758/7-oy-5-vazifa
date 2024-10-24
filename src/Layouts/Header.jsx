@@ -29,8 +29,11 @@ function Header({ children }) {
           <div className="flex flex-row gap-5 text-white text-xl">
             <Link to={"/"}>Home</Link>
             <Link to={"/about"}>About</Link>
-           < Link to={"/products"}>Products</Link>
+            <Link to={"/products"}>Products</Link>
             <Link to={"/cart"}>Cart</Link>
+            <Link to={"/checkout"}>Checkout</Link>
+            <Link to={"/orders"}>orders</Link>
+
            
           </div>
 
