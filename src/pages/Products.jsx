@@ -39,9 +39,9 @@ function Products() {
     })
   }
   return (
-    <div className='max-w-[1100px] mx-auto  text-center '>
+    <div className='container max-w-[1100px] mx-auto  text-center '>
       <div className='max-w-[1049px] mx-auto  bg-base-200 mb-5 px-8 py-4'>
-        <div className='flex justify-between '>
+        <div className='container flex justify-between '>
         <div>
           <p>Search Products</p>
           <input ref={nameRef} className="input input-bordered input-sm" type="text" />

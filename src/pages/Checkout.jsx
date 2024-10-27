@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
 function Checkout() {
+  const nameRef = useRef()
+  const locationRef = useRef()
+  
+ 
   function handle_btn(ev) {
     ev.preventDefault()
-    console.log('fg');
+    console.log(localStorage.getItem('addres'))
+
+    let data = {
+      name : nameRef.current.value,
+      addres : locationRef.current.value
+    }
+
+    
+    let localData = localStorage.getItem('addres')
+    let copied = []
+    if (localData) {
+      copied = JSON.parse(localData)
+      copied.push(data)
+      
+    }else{
+      localStorage.setItem('addres', JSON.stringify(data))
+    }
+
+    localStorage.setItem('addres', JSON.stringify(copied))
   }
   return (
-    <div className="max-w-[1200px] mx-auto">
+    <div className="container max-w-[1200px] mx-auto">
       <div className="border-b border-base-300 pb-5 mb-6">
         <h1 className="text-3xl font-medium tracking-wider">
           Place Your Order
@@ -18,25 +40,27 @@ function Checkout() {
           <h4 className="font-medium text-xl capitalize">shipping information</h4>
           
           <div >
-            <label for="name" className="label">
+            <label htmlFor="name" className="label">
               <span className="label-text capitalize">first name</span>
             </label>
             <input
+              ref={nameRef}
               type="text"
               name="name"
               className="input input-bordered w-full "
-              value=""
+              defaultValue=""
             />
           </div>
           <div className="">
-            <label for="address" className="label">
+            <label htmlFor="address" className="label">
               <span className="label-text capitalize">address</span>
             </label>
             <input
+              ref={locationRef}
               type="text"
               name="address"
               className="input input-bordered w-full"
-              value=""
+              defaultValue=""
             />
           </div>
           <div className="mt-4">

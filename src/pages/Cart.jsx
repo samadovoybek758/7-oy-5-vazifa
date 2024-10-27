@@ -34,33 +34,36 @@ function Cart() {
           Your cart is empty
         </h2>
       </div>
-      <div className="flex gap-5  justify-between container">
-      <div className="w-[3000px]">
+      <div className="flex justify-between container">
+      <div className="w-[714px]">
         {cart.length > 0 &&
           cart.map(function (value, index) {
             return (
               <div key={index} className="flex justify-between w-full border-b p-4">
                 <img
-                  className="w-[300px] h-[200px] object-cover rounded-md"
+                  className="w-[128px] h-[128px] object-cover rounded-md"
                   src={value.data.attributes.image}
                   alt=""
                 />
-                <div>
-                  <h2 className="text-gray-600 text-2xl font-bold mb-5 uppercase">
+                <div className="">
+                  <h2 className="text-gray-600 text-lg font-bold mb-2 uppercase">
                     {value.data.attributes.title}
                   </h2>
-                  <p className="mb-3">{value.data.attributes.company}</p>
+                  <p className="mb-3 text-gray-500">{value.data.attributes.company}</p>
+                  <div className="flex items-center gap-2">
+                    <span>Color :</span>
                   <span
                     style={{
                       backgroundColor: value.color,
                     }}
-                    className={"block w-7 h-7 rounded-lg cursor-pointer"}
+                    className={"block w-4 h-4 rounded-lg cursor-pointer"}
                   ></span>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-3">
-                  <h4>Amount</h4>
+                <div className="flex flex-col ">
+                  <h4 className=" mb-2 text-sm">Amount</h4>
                   <select
-                    className="w-20 p-2 bg-blue-500 text-white rounded-md border"
+                    className="w-14 h-6 px-2 bg-blue-500 text-white text-xs rounded-md border"
                     value={value.count}
                     onChange={(e) =>
                       changeCount(e.target.value, value.color, value.id)
@@ -75,13 +78,13 @@ function Cart() {
                   </select>
                   <span
                     onClick={() => removed(value.id, value.color)}
-                    className="text-xl cursor-pointer text-blue-500"
+                    className="text-lg cursor-pointer text-blue-500 mt-2"
                   >
                     remove
                   </span>
                 </div>
                 <div>
-                  <p className="text-gray-600 text-2xl font-bold ">
+                  <p className="text-gray-600 text-lg font-bold ">
                     ${value.data.attributes.price}
                   </p>
                 </div>
@@ -90,8 +93,8 @@ function Cart() {
           })}
         </div>
 
-        <div className="w-1/2">
-          <div className="card bg-base-200 w-1/2 p-4">
+        <div className="w-[300px] block">
+          <div className="card bg-base-200  p-4">
             <div className="mb-2">
               <span className="text-xs border-b border-base-300 pb-2">
                 Subtotal

@@ -54,7 +54,7 @@ function Details() {
   }
   
   return (
-    <div className='continer flex max-w-[1200px] mx-auto flex-row'>
+    <div className='container flex max-w-[1200px] mx-auto flex-row'>
         {
           product.id  && <>
              <div className='font-sans mx-auto gap-8 continer flex max-w-[973px] flex-row'>

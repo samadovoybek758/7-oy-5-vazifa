@@ -26,7 +26,7 @@ function Home() {
 
   return (
     <>
-      <div className="w-[1200px] mx-auto mb-10 flex flex-row"> 
+      <div className="container w-[1200px] mx-auto mb-10 flex flex-row"> 
           <div>
             <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-6xl">We are changing the way people shop</h1>
             <p className="mb-8 mt-8 max-w-xl text-lg leading-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore repellat explicabo enim soluta temporibus asperiores aut obcaecati perferendis porro nobis</p>
@@ -45,7 +45,7 @@ function Home() {
         </div>
 
 
-        <div className="continer max-w-[1200px] mx-auto flex gap-5 mb-32">
+        <div className="container max-w-[1200px] mx-auto flex gap-5 mb-32">
           {data.length > 0 &&
             data.map(function (data) {
               return (
