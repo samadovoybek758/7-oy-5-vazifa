@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContex } from "../App";
 
 function Header({ children }) {
   const { cart, setCard } = useContext(CartContex);
   const [count, setCount] = useState();
+  const navigate = useNavigate()
 
   useEffect(() => {
     let sum = 0;
@@ -14,10 +15,15 @@ function Header({ children }) {
 
     setCount(sum);
   }, [cart]);
+
+  function handleCart(e) {
+    e.preventDefault()
+    navigate('/cart')
+  }
   return (
     <div>
       <div className=" bg-slate-500 mb-20 mx-auto  ">
-        <div className="container navbar mx-auto w-[1150px] flex justify-between gap-10">
+        <div className="container navbar mx-auto w-[1200px] flex justify-between">
           <div className="flex-1 max-w-[100px]">
             <a
               className="hidden lg:flex btn btn-primary text-3xl items-center"
@@ -38,7 +44,7 @@ function Header({ children }) {
           </div>
 
           <div>
-            <div className="indicator">
+            <div onClick={handleCart} className="indicator cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-9 w-9"

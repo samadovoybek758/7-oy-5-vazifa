@@ -36,7 +36,7 @@ function App() {
       if (
         !(
           location.pathname == "/" ||
-          location.pathname.includes("register") ||
+          location.pathname.includes("Register") ||
           location.pathname.includes("about") ||
           location.pathname.includes("products") ||
           location.pathname.includes("cart")

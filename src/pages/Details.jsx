@@ -22,7 +22,7 @@ function Details() {
     .catch(err =>{
       console.log(err);
     })
-  },[cart])
+  },[id])
 
   function toCart(e) {
     e.preventDefault()
@@ -44,10 +44,11 @@ function Details() {
     }else{
       copied = copied.map(function (value) {
         if (value.id == data.id && value.color == color) {
-          value.count == Number(value.count)
-          value.count += Number(data.count)
+          value.count += Number(data.count);
         }
+        return value; 
       })
+      
     }
     setCart(copied)
     localStorage.setItem('cart',JSON.stringify(copied))

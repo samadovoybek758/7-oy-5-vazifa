@@ -11,22 +11,28 @@ function Checkout() {
 
     let data = {
       name : nameRef.current.value,
-      addres : locationRef.current.value
+      addres : locationRef.current.value,
+      date : new Date()
     }
 
-    
-    let localData = localStorage.getItem('addres')
-    let copied = []
-    if (localData) {
-      copied = JSON.parse(localData)
+    let copied = [] 
+    copied = JSON.parse(localStorage.getItem('addres')) || []
       copied.push(data)
-      
-    }else{
-      localStorage.setItem('addres', JSON.stringify(data))
-    }
-
     localStorage.setItem('addres', JSON.stringify(copied))
   }
+  
+  //   let localData = localStorage.getItem('addres')
+  //   let copied = []
+  //   if (localData) {
+  //     copied = JSON.parse(localData)
+  //     copied.push(data)
+      
+  //   }else{
+  //     localStorage.setItem('addres', JSON.stringify(data))
+  //   }
+
+  //   localStorage.setItem('addres', JSON.stringify(copied))
+  // }
   return (
     <div className="container max-w-[1200px] mx-auto">
       <div className="border-b border-base-300 pb-5 mb-6">

@@ -19,13 +19,20 @@ function Register() {
     }
     http.post('auth/local/register', data)
     .then(data => {
-     
+
+      console.log(data);
+      navigate('/login')
     })
     .catch(err =>{
-      console.log(err);
+      let con = confirm("email yoki username allaqachon ishlatilgan");
+      if (con) {
+        emailRef.current.value = '';
+        passwordRef.current.value = '';
+        nameRef.current.value = '';
+      }
     })
 
-   navigate('/login')
+   
   }
   return (
     <div>

@@ -1,14 +1,22 @@
 import React, { useContext } from "react";
 import { CartContex } from "../App";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const { cart, setCart } = useContext(CartContex);
+  const navigate = useNavigate()
 
   function removed(id, color) {
     let copied = [...cart];
 
     copied = copied.filter(function (value) {
-      return !(value.id == id && value.color == color);
+      let conf = confirm("Rostdan ham o'chirmoqchimisiz")
+      if (conf) {
+        return !(value.id == id && value.color == color);
+      }else{
+        return copied
+      }
+      
     });
 
     setCart(copied);
@@ -26,6 +34,12 @@ function Cart() {
 
     setCart(copied);
     localStorage.setItem("cart", JSON.stringify(copied));
+  }
+
+
+  function tochek(e) {
+    e.preventDefault()
+    navigate('/checkout')
   }
   return (
     <div className="container max-w-[1200px] mx-auto ">
@@ -121,6 +135,8 @@ function Cart() {
               <span className="font-medium"></span>
             </div>
           </div>
+
+          <button  onClick={tochek} className="btn btn-primary btn-block mt-4" >PROCEED TO CHECKOUT</button>
         </div>
         </div>
       
