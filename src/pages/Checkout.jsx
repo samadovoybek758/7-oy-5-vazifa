@@ -19,6 +19,9 @@ function Checkout() {
     copied = JSON.parse(localStorage.getItem('addres')) || []
       copied.push(data)
     localStorage.setItem('addres', JSON.stringify(copied))
+
+    nameRef.current.value =' ';
+    locationRef.current.value = ' '
   }
   
   //   let localData = localStorage.getItem('addres')
