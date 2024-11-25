@@ -45,7 +45,7 @@ function Login() {
         <input ref={emailRef} className='input input-bordered undefined' type="email" placeholder='Enter Email' />
         <input ref={passwordRef} className='input input-bordered undefined' type="password" placeholder='Password' />
         <button onClick={handle_btn} className='btn btn-primary'>Login</button>
-        <button onClick={handle_btn2} className='btn btn-secondary bg-indigo-900 border-none mt-3'>GUEST USER</button>
+        {/* <button onClick={handle_btn2} className='btn btn-secondary bg-indigo-900 border-none mt-3'>GUEST USER</button> */}
         <button onClick={goRegister} className='btn btn-secondary bg-indigo-900 border-none mt-3'>Register</button>
       </form>
     </div>
